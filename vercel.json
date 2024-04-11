@@ -1,0 +1,15 @@
+{
+    "redirects": [
+      {
+        "source": "/projects/spotify-clone/songs/:filePath",
+        "destination": "spotify-clone/songs/:filePath",
+        "permanent": true
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/projects/<SideProjectName>",
+        "destination": "<SideProjectProdUrl>"
+      }
+    ]
+  }
