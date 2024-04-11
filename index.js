@@ -71,7 +71,7 @@ async function displayAlbums() {
         const e = array[index];
         if (e.href.includes("/songs")) {
             let folder = e.href.split("/").slice(-1)[0];
-            let ap = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+            let ap = await fetch(`/songs/${folder}/info.json`);
             let respons = await ap.json();
             cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div data-folder=${folder} class="song ">
                 <div class="">
@@ -161,7 +161,7 @@ async function main() {
     let volume = document.querySelector(".vol>img");
     volume.addEventListener("click", e => {
         console.log(e.target)
-        if (e.target.src ==  "http://127.0.0.1:5500/volume.svg") {
+        if (e.target.src ==  "volume.svg") {
             e.target.src = e.target.src.replace("volume.svg", "mute.svg")
             currentSong.volume=0
             document.querySelector(".vol").getElementsByTagName("input")[0].value = 0;
