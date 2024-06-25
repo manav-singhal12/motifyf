@@ -1,0 +1,9 @@
+{
+    "redirects": [
+      {
+        "source": "/songs/",
+        "destination": "/songs",
+        "permanent": true
+      }
+    ]
+}
