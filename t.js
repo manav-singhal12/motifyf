@@ -77,7 +77,7 @@ async function getsongs(folder) {
 
 //Display Albums
 async function displayAlbums() {
-    let a = await fetch("http://127.0.0.1:5500/songs/");
+    let a = await fetch("/songs/");
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -93,7 +93,7 @@ async function displayAlbums() {
         if (e.href.includes("/songs")) {
             let folder = e.href.split("/").slice(-1)[0];
             // console.log(folder);
-            let ap = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+            let ap = await fetch(`/songs/${folder}/info.json`);
             let respons = await ap.json();
             // console.log(respons);
             // console.log(respons.title);
@@ -227,7 +227,7 @@ async function main() {
     volume.addEventListener("click", e => {
         console.log(e.target)
 
-        if (e.target.src ==  "http://127.0.0.1:5500/volume.svg") {
+        if (e.target.src ==  "volume.svg") {
             e.target.src = e.target.src.replace("volume.svg", "mute.svg")
             currentSong.volume=0
             document.querySelector(".vol").getElementsByTagName("input")[0].value = 0;
