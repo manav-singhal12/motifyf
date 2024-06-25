@@ -1,7 +1,7 @@
 {
     "redirects": [
       {
-        "source": "/songs/",
+        "source": "https://manav-coral.vercel.app/songs/",
         "destination": "/songs",
         "permanent": true
       }
