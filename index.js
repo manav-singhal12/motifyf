@@ -66,6 +66,7 @@ async function displayAlbums() {
     let div = document.createElement("div");
     div.innerHTML = response;
     let anchors = div.querySelector("#files");
+    console.log(anchors)
     let anchor = anchors.getElementsByTagName("a");
 
     let cardcontainer = document.querySelector(".rightsecondtwo");
