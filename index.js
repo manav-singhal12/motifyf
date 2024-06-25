@@ -62,6 +62,7 @@ async function displayAlbums() {
     let a = await fetch("/songs/");
     let response = await a.text();
     let div = document.createElement("div");
+    console.log(div)
     div.innerHTML = response;
     let anchors = div.querySelector("#files");
     console.log(anchors)
