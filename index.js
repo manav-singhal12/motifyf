@@ -64,13 +64,21 @@ async function displayAlbums() {
     let div = document.createElement("div");
     div.innerHTML = response;
     let anchors = div.querySelector("#files");
+    console.log(anchors)
     let anchor = anchors.getElementsByTagName("a");
+    console.log(anchor)
+
     let cardcontainer = document.querySelector(".rightsecondtwo");
     let array = Array.from(anchor)
+    console.log(array)
+
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
+    console.log(e)
+
         if (e.href.includes("/songs")) {
             let folder = e.href.split("/").slice(-1)[0];
+            console.log(folder)
             let ap = await fetch(`/songs/${folder}/info.json`);
             let respons = await ap.json();
             cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div data-folder=${folder} class="song ">
